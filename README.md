@@ -1,12 +1,10 @@
-# ================================
 # GifFrameExtractor
-# ================================
 
-GifFrameExtractor is a PHP class that separates all the frames (and their duration) of an animated GIF
+GifFrameExtractor is a PHP class that separates all the frames (and their durations) of an animated GIF.
 
 ### For what ?
 
-The class helps you to separate all the frames of an animated GIF, for example to watermark them and then to
+The class helps you separate all the frames of an animated GIF, for example to watermark them and then to
 generate a new watermarked and animated GIF.
 
 ### Usage
@@ -18,16 +16,16 @@ GifFrameExtractor is really easy to use:
 ```php
 $gifFilePath = 'path/images/picture.gif';
 
-if (GifFrameExtractor::isAnimatedGif($gifFilePath)) { // check this is an animated GIF
+if (GifFrameExtractor::isAnimatedGif($gifFilePath)) { // check that this is an animated GIF
     
     $gfe = new GifFrameExtractor();
     $gfe->extract($gifFilePath);
     
-    // Do something with extracted frames ...
+    // Do something with the extracted frames ...
 }
 ```
 
-**2 - Getting the frames and their duration:**
+**2 - Getting the frames and their durations:**
 
 ```php
 foreach ($gfe->getFrames() as $frame) {
@@ -40,14 +38,14 @@ foreach ($gfe->getFrames() as $frame) {
 }
 ```
 
-You can also get separately an array of images and an array of durations:
+You can also get a separate array of images and durations:
 
 ```php
 $frameImages = $gfe->getFrameImages();
 $frameDurations = $gfe->getFrameDurations();
 ```
 
-And obtain usefull informations:
+You can also obtain the following information:
 
 ```php
 $totalDuration = $gfe->getTotalDuration(); // Total duration of the animated GIF
@@ -62,10 +60,10 @@ You can choose if you want to get the original frames (with transparency backgro
 with the second parameter of extract() method:
 
 ```php
-$gfe->extract('path/images/picture.gif', true); // Can get transparency orignal frames
+$gfe->extract('path/images/picture.gif', true); // Can get transparent orignal frames
 ```
 
-This option is false by default. 
+This option is false by default.
 
 ### About
 
